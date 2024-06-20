@@ -80,7 +80,7 @@ roundUnlimitedButton.addEventListener('click', () => {
     }
 });
 
-restartButtons.forEach(button => button.addEventListener('click', resetGame));
+restartButtons.forEach(button => button.addEventListener('click', restartGame));
 quitButtons.forEach(button => button.addEventListener('click', quitGame));
 
 function startGame() {
@@ -106,12 +106,11 @@ function startGame() {
     setStatusText(`Player X's turn`);
 }
 
-function resetGame() {
+function restartGame() {
     resetScores();
     currentRound = 0;
     resultOverlay.style.display = 'none'; // Hide result overlay
-    gameContainer.style.display = 'none';
-    modeSelection.style.display = 'flex';
+    startGame();
 }
 
 function quitGame() {
@@ -151,7 +150,7 @@ function handleClick(e) {
             setTimeout(() => {
                 computerMove();
                 hideComputerThinking();
-            }, 2000);  // Delay for computer move
+            }, 1000);  // 1-second delay for computer thinking
         }
     }
 }
@@ -204,7 +203,7 @@ function endGame(draw, currentClass) {
         }
     });
 
-    setTimeout(startGame, 2000); // Delay before starting next round
+    setTimeout(startGame, 1000); // 1-second delay before starting next round
 }
 
 function isDraw() {
