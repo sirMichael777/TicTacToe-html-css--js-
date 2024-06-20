@@ -10,6 +10,85 @@ body {
     color: #fff;
 }
 
+.mode-selection, .difficulty-selection, .round-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mode-title, .difficulty-title, .round-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    color: #00ffff;
+}
+
+.mode-options, .difficulty-options, .round-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mode-btn, .difficulty-btn, .round-btn, .round-confirm-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: background 0.3s;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mode-btn:hover, .difficulty-btn:hover, .round-btn:hover, .round-confirm-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.round-options input {
+    width: 200px;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-right: 10px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.scoreboard {
+    margin-bottom: 20px;
+}
+
+.score-text {
+    font-size: 1.5em;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    color: #00ffff;
+}
+
+.round-text {
+    font-size: 1.2em;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 1);
+    color: #00ffff;
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -19,6 +98,7 @@ body {
     border: 2px solid #fff;
     padding: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    position: relative;
 }
 
 .cell {
@@ -98,4 +178,87 @@ body {
     to {
         box-shadow: 0 0 20px rgba(255, 255, 255, 1);
     }
+}
+
+.computer-thinking {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.robot {
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin-bottom: 10px; /* Add margin to separate icon from text */
+}
+
+.thinking-text {
+    font-size: 1.5em;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    color: #00ffff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    display: none;
+}
+
+.result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-message {
+    text-align: center;
+    color: #00ffff;
+    font-size: 2em;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+.result-message h2 {
+    margin-bottom: 20px;
+}
+
+.result-message button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: background 0.3s;
+    margin: 5px;
+}
+
+.result-message button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }

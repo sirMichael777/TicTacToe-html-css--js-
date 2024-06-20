@@ -7,21 +7,85 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-board">
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
+    <div class="mode-selection">
+        <h2 class="mode-title">Select Game Mode</h2>
+        <div class="mode-options">
+            <button class="mode-btn" data-mode="computer">
+                <img src="computer_icon.png" alt="Computer Icon" class="icon">
+                Play vs Computer
+            </button>
+            <button class="mode-btn" data-mode="multiplayer">
+                <img src="multiplayer_icon.png" alt="Multiplayer Icon" class="icon">
+                Multiplayer
+            </button>
+        </div>
     </div>
-    <div class="game-status">
-        <h2 class="status-text">Player X's turn</h2>
-        <button class="restart-btn">Restart Game</button>
-        <button class="quit-btn">Quit Game</button>
+    <div class="difficulty-selection" style="display: none;">
+        <h2 class="difficulty-title">Select Difficulty</h2>
+        <div class="difficulty-options">
+            <button class="difficulty-btn" data-difficulty="easy">
+                <img src="easy_icon.png" alt="Easy Icon" class="icon">
+                Easy
+            </button>
+            <button class="difficulty-btn" data-difficulty="medium">
+                <img src="medium_icon.png" alt="Medium Icon" class="icon">
+                Medium
+            </button>
+            <button class="difficulty-btn" data-difficulty="hard">
+                <img src="hard_icon.png" alt="Hard Icon" class="icon">
+                Hard
+            </button>
+        </div>
+    </div>
+    <div class="round-selection" style="display: none;">
+        <h2 class="round-title">Select Number of Rounds</h2>
+        <div class="round-options">
+            <input type="number" id="rounds-input" min="1" max="999" placeholder="Enter number of rounds" />
+            <button class="round-btn" data-rounds="unlimited">
+                <img src="unlimited_icon.png" alt="Unlimited Icon" class="icon">
+                Unlimited
+            </button>
+            <button class="round-confirm-btn">
+                <img src="confirm_icon.png" alt="Confirm Icon" class="icon">
+                Confirm
+            </button>
+        </div>
+    </div>
+    <div class="game-container" style="display: none;">
+        <div class="scoreboard">
+            <h2 class="score-text">Player X: 0 - Player O: 0</h2>
+            <h3 class="round-text">Round 1 of 1</h3>
+        </div>
+        <div class="game-board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="game-status">
+            <h2 class="status-text">Player X's turn</h2>
+            <button class="restart-btn">Restart Game</button>
+            <button class="quit-btn">Quit Game</button>
+        </div>
+        <div class="computer-thinking" style="display: none;">
+            <div class="robot">
+                <img src="robot_icon.png" alt="Robot Icon" class="icon">
+            </div>
+            <h2 class="thinking-text">Computer thinking...</h2>
+        </div>
+    </div>
+    <div class="overlay" style="display: none;"></div>
+    <div class="result-overlay" style="display: none;">
+        <div class="result-message">
+            <h2 class="result-text"></h2>
+            <button class="restart-btn">Restart Game</button>
+            <button class="quit-btn">Quit Game</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
